@@ -99,7 +99,6 @@ namespace ABS_Insurance.Controllers
             return Ok("Policy has been updated successfully");
         }
 
-        
         // DELETE: api/Policy/5
         [HttpDelete("{policyId}")]
         public IActionResult DeletePolicy(int policyId)
