@@ -2,7 +2,7 @@ using ABS_Insurance.Model;
 
 namespace ABS_Insurance.Interface;
 
-public interface IPolicy
+public interface IPolicyRepository
 {
     ICollection<Policy> GetPolicies();
     Policy GetPolicy(int policyId);

@@ -1,11 +1,15 @@
 using System.Text.Json.Serialization;
 using ABS_Insurance.Data.AppDBContext;
+using ABS_Insurance.Interface;
+using ABS_Insurance.Repository;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<IPolicyRepository, PolicyRepository>();
+builder.Services.AddScoped<IComponentRepository, ComponentRepository>();
 builder.Services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); 
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => { options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles; });
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

@@ -1,10 +1,12 @@
 using ABS_Insurance.Data.AppDBContext;
+using ABS_Insurance.Data.Dto;
 using ABS_Insurance.Interface;
 using ABS_Insurance.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace ABS_Insurance.Repository;
 
-public class PolicyRepository: IPolicy
+public class PolicyRepository: IPolicyRepository
 {
     private readonly AppDbContext _context;
 
@@ -15,13 +17,17 @@ public class PolicyRepository: IPolicy
     
     public ICollection<Policy> GetPolicies()
     {
-        var policy = _context.Policies.OrderBy(p => p.PolicyId).ToList();
+        var policy = _context.Policies
+            .Include(c => c.ComponentsCollection)
+            .OrderBy(p => p.PolicyId).ToList();
         return policy;
     }
 
     public Policy GetPolicy(int policyId)
     {
-        var policy = _context.Policies.Where(p => p.PolicyId == policyId).FirstOrDefault();
+        var policy = _context.Policies
+            .Include(c => c.ComponentsCollection)
+            .Where(p => p.PolicyId == policyId).FirstOrDefault();
         return policy;
     }
 
@@ -31,9 +37,14 @@ public class PolicyRepository: IPolicy
         return policy;
     }
 
-    public bool CreatePolicy(Policy createPolicy)
+    public bool CreatePolicy(Policy newPolicy)
     {
-        var policy = _context.Policies.Add(createPolicy);
+        var createpolicy = new Policy()
+        {
+            PolicyName = newPolicy.PolicyName,
+            ComponentsCollection = newPolicy.ComponentsCollection = null
+        };
+        var policy = _context.Policies.Add(createpolicy);
         return Save();
     }
 

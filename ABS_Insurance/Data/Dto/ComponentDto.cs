@@ -1,6 +1,6 @@
-namespace ABS_Insurance.Model;
+namespace ABS_Insurance.Data.Dto;
 
-public class Components
+public class ComponentDto
 {
     public int ComponentsId { get; set; }
     public int Sequence { get; set; }
@@ -8,5 +8,4 @@ public class Components
     public string Operation { get; set; }
     public double FlatValue { get; set; }
     public int PercentageValue { get; set; }
-    //public Policy Policy { get; set; }
 }
