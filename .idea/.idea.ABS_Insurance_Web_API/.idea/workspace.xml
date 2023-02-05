@@ -4,16 +4,27 @@
     <projectFile profileName="ABS_Insurance">ABS_Insurance/ABS_Insurance.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbbe1041-473b-4ee6-8561-9619c2317e65" name="Changes" comment="Initial Push" />
+    <list default="true" id="fbbe1041-473b-4ee6-8561-9619c2317e65" name="Changes" comment="To master">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ABS_Insurance_Web_API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ABS_Insurance_Web_API/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Under_Construction" />
+      </map>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6f2c3a317ee06bc1b0766b94d4e6a045ea25c9a3da49cb9075bcee751250d4/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7733bdb26b2be012c4266979a95d3728e74790201f91a02df4529ee6c2f37/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a1a59674744830c52bb8ec2c75c1a5b1b21ec7b871acd25d24a346472da73b/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/perigrinobruce/RiderProjects/ABS_Insurance_Web_API/ABS_Insurance/Controllers/PolicyController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/perigrinobruce/RiderProjects/ABS_Insurance_Web_API/ABS_Insurance/Controllers/PolicyController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -27,25 +38,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.24962178",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "settings.editor.splitter.proportion": "0.22958258",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.24962178&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.22958258&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/perigrinobruce/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/perigrinobruce/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/perigrinobruce/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/perigrinobruce/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/perigrinobruce/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/perigrinobruce/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ABS_Insurance" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ABS_Insurance/ABS_Insurance.csproj" />
@@ -71,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675416826456</updated>
-      <workItem from="1675416827725" duration="36541000" />
+      <workItem from="1675416827725" duration="37563000" />
     </task>
     <task id="LOCAL-00001" summary="001">
       <created>1675430339044</created>
@@ -94,7 +105,28 @@
       <option name="project" value="LOCAL" />
       <updated>1675563054411</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="initial commit">
+      <created>1675563407270</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675563407270</updated>
+    </task>
+    <task id="LOCAL-00005" summary="001">
+      <created>1675563680763</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675563680763</updated>
+    </task>
+    <task id="LOCAL-00006" summary="To master">
+      <created>1675563883061</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675563883061</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,9 +147,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="001" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Initial Push" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Push" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="001" />
+    <MESSAGE value="To master" />
+    <option name="LAST_COMMIT_MESSAGE" value="To master" />
   </component>
 </project>
