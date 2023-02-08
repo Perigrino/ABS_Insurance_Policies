@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace ABS_Insurance.Model;
 
 public class Components
@@ -8,5 +10,7 @@ public class Components
     public string Operation { get; set; }
     public double FlatValue { get; set; }
     public int PercentageValue { get; set; }
-    //public Policy Policy { get; set; }
+    public int Pol_Id { get; set; }
+    public Policy Policy { get; set; }
+
 }

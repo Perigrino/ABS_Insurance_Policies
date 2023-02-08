@@ -6,6 +6,7 @@ public class Policy
 { 
     public int PolicyId { get; set; }
     public string PolicyName { get; set; }
+    
     //Navigation Properties
-    public ICollection<Components>? ComponentsCollection { get; set; } = new List<Components>();
+    public ICollection<Components>? ComponentsList { get; set; } = new List<Components>();
 }

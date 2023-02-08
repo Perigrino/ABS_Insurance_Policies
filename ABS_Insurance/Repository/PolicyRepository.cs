@@ -18,7 +18,7 @@ public class PolicyRepository: IPolicyRepository
     public ICollection<Policy> GetPolicies()
     {
         var policy = _context.Policies
-            .Include(c => c.ComponentsCollection)
+            .Include(c => c.ComponentsList)
             .OrderBy(p => p.PolicyId).ToList();
         return policy;
     }
@@ -26,7 +26,7 @@ public class PolicyRepository: IPolicyRepository
     public Policy GetPolicy(int policyId)
     {
         var policy = _context.Policies
-            .Include(c => c.ComponentsCollection)
+            .Include(c => c.ComponentsList)
             .Where(p => p.PolicyId == policyId).FirstOrDefault();
         return policy;
     }
@@ -39,12 +39,12 @@ public class PolicyRepository: IPolicyRepository
 
     public bool CreatePolicy(Policy newPolicy)
     {
-        var createpolicy = new Policy()
-        {
-            PolicyName = newPolicy.PolicyName,
-            ComponentsCollection = newPolicy.ComponentsCollection = null
-        };
-        var policy = _context.Policies.Add(createpolicy);
+        // var createpolicy = new Policy()
+        // {
+        //     PolicyName = newPolicy.PolicyName,
+        //     ComponentsList = newPolicy.ComponentsList = null
+        // };
+        _context.Policies.Add(newPolicy);
         return Save();
     }
 

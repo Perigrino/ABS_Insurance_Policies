@@ -8,9 +8,11 @@ public class MappingProfiles: Profile
 {
     public MappingProfiles()
     {
-        CreateMap<Policy,PolicyDto>();
-        CreateMap<PolicyDto,Policy>();
+        CreateMap<Policy,CreatePolicyDto>();
+        CreateMap<CreatePolicyDto,Policy>();
+        CreateMap<UpdatePolicyDto,Policy>();
         CreateMap<ComponentDto,Components>();
+        CreateMap<CreateComponentDto,Components>();
         CreateMap<Components,ComponentDto>();
     }
 }

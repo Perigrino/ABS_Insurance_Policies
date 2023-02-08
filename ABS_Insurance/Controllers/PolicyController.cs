@@ -44,7 +44,7 @@ namespace ABS_Insurance.Controllers
 
         // POST: api/Policy
         [HttpPost]
-        public IActionResult PostPolicy([FromBody] PolicyDto createPolicy)
+        public IActionResult PostPolicy([FromBody] CreatePolicyDto createPolicy)
         {
             if (createPolicy == null)
                 return BadRequest(ModelState);
@@ -74,7 +74,7 @@ namespace ABS_Insurance.Controllers
 
         // PUT: api/Policy/5
         [HttpPut("{policyId}")]
-        public IActionResult UpdatePolicy(int policyId, [FromBody] PolicyDto updatePolicy)
+        public IActionResult UpdatePolicy(int policyId, [FromBody] UpdatePolicyDto updatePolicy)
         {
             if (updatePolicy == null)
                 return BadRequest(ModelState);

@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using ABS_Insurance.Data.AppDBContext;
 using ABS_Insurance.Interface;
 using ABS_Insurance.Model;
@@ -36,7 +37,16 @@ public class ComponentRepository : IComponentRepository
 
     public bool CreateComponent(Components component)
     {
-        var components = _context.Components.Add(component);
+        var newComponent = new Components()
+        {
+            Name = component.Name,
+            Sequence = component.Sequence,
+            Operation = component.Operation,
+            FlatValue = component.FlatValue,
+            PercentageValue = component.PercentageValue,
+            Pol_Id = component.Pol_Id
+        };
+        _context.Components.Add(newComponent);
         return Save();
     }
 

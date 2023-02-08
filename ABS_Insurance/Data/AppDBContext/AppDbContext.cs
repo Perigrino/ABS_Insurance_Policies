@@ -10,7 +10,13 @@ public class AppDbContext: DbContext
         
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)  
-    {  
+    {
+        modelBuilder.Entity<Components>()
+            .HasKey(c => c.ComponentsId);
+        modelBuilder.Entity<Components>()
+            .HasOne<Policy>(e => e.Policy)
+            .WithMany(g => g.ComponentsList)
+            .HasForeignKey(s => s.Pol_Id);
 
     } 
     
