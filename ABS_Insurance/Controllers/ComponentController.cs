@@ -45,6 +45,7 @@ namespace ABS_Insurance.Controllers
             var components = _mapper.Map<ComponentDto>(_componentRepository.GetComponent(componentId));
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+            
             return Ok(components);
 
         }
@@ -70,14 +71,12 @@ namespace ABS_Insurance.Controllers
                 return BadRequest();
 
             var componentMap = _mapper.Map<Components>(createComponents);
-            //componentMap.Policy = _policyRepository.GetPolicy(polcyId);
 
             if (!_componentRepository.CreateComponent(componentMap))
             {
                 ModelState.AddModelError("","Something went wrong whiles adding Component");
                 return StatusCode(500, ModelState);
             }
-
             return Ok("Component has been be added successfully");
         }
 
@@ -103,7 +102,6 @@ namespace ABS_Insurance.Controllers
                 ModelState.AddModelError("","Something went wrong whiles updating component.");
                 return StatusCode(500, ModelState);
             }
-
             return Ok("Component has been updated successfully");
         }
 
@@ -127,7 +125,6 @@ namespace ABS_Insurance.Controllers
                 ModelState.AddModelError("","Something went wrong whiles deleting component");
                 return StatusCode(500, ModelState);
             }
-
             return Ok("Component has been deleted successfully");
         }
     }
