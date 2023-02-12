@@ -60,6 +60,12 @@ public class PolicyRepository: IPolicyRepository
         return Save();
     }
 
+    // public double CalculatePremium(double marketValue, int policyId)
+    // {
+    //     
+    //
+    // }
+
     public bool Save()
     {
         var saved = _context.SaveChanges();

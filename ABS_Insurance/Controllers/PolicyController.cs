@@ -12,12 +12,14 @@ namespace ABS_Insurance.Controllers
     public class PolicyController : ControllerBase
     {
         private readonly IPolicyRepository _policyRepository;
+        private readonly IPremiumService _premiumService;
         private readonly IMapper _mapper;
 
-        public PolicyController(IPolicyRepository policyRepository, IMapper mapper)
+        public PolicyController(IPolicyRepository policyRepository, IPremiumService premiumService, IMapper mapper)
         {
             _policyRepository = policyRepository;
             _mapper = mapper;
+            _premiumService = premiumService;
         }
         // GET: api/Policy
         [HttpGet]
@@ -70,6 +72,15 @@ namespace ABS_Insurance.Controllers
             }
 
             return Ok("Policy has been created successfully");
+        }
+        
+        
+        [HttpPost("premuim")]
+        public IActionResult CalCulatePremuim ([FromBody] CalPolicyPolicyDto calPolicy)
+        {
+            double perimuim = _premiumService.CalculatePremium(calPolicy.MarketValue, calPolicy.PolicyId);
+
+            return Ok(perimuim);
         }
 
         // PUT: api/Policy/5
