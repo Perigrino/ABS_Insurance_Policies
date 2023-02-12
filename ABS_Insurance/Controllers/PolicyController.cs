@@ -71,6 +71,15 @@ namespace ABS_Insurance.Controllers
 
             return Ok("Policy has been created successfully");
         }
+        
+        
+        [HttpPost("premuim")]
+        public IActionResult PostPremuim ([FromBody] CalPolicyPolicyDto calPolicyPolicy)
+        {
+            double perimuim = _policyRepository.CalculatePremium(calPolicyPolicy.MarketValue, calPolicyPolicy.PolicyId);
+
+            return Ok(perimuim);
+        }
 
         // PUT: api/Policy/5
         [HttpPut("{policyId}")]

@@ -15,3 +15,11 @@ public class UpdatePolicyDto
     public string PolicyName { get; set; } = null!;
     //public ICollection<Components> ComponentsCollection { get; set; }
 }
+
+
+public class CalPolicyPolicyDto
+{
+    public int PolicyId { get; set; }
+    public double MarketValue { get; set; }
+    //public ICollection<Components> ComponentsCollection { get; set; }
+}

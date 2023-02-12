@@ -2,9 +2,6 @@ using System.ComponentModel;
 using ABS_Insurance.Data.AppDBContext;
 using ABS_Insurance.Interface;
 using ABS_Insurance.Model;
-using AutoMapper;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ABS_Insurance.Repository;
 
@@ -25,8 +22,8 @@ public class ComponentRepository : IComponentRepository
 
     public Components GetComponent(int componentId)
     {
-        var components = _context.Components.Where(c => c.ComponentsId == componentId).FirstOrDefault();
-        return components;
+        var component = _context.Components.FirstOrDefault(c => c.ComponentsId == componentId);
+        return component;
     }
 
     public bool ComponentExists(int componentId)
@@ -61,7 +58,6 @@ public class ComponentRepository : IComponentRepository
         var compnent = _context.Components.Remove(component);
         return Save();
     }
-
     public bool Save()
     {
         var saved = _context.SaveChanges();
