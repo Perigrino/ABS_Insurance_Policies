@@ -60,24 +60,11 @@ public class PolicyRepository: IPolicyRepository
         return Save();
     }
 
-    public double CalculatePremium(double marketValue, int policyId)
-    {
-        
-        var policy = GetPolicy(policyId);
-        double perimuimValue = 0;
-        foreach (var p in policy.ComponentsList)
-        {
-            if (p.Operation == "add")
-            {
-                perimuimValue += ((marketValue * p.PercentageValue) + p.FlatValue);
-            }
-            else
-            {
-                perimuimValue -= ((marketValue * p.PercentageValue) + p.FlatValue);
-            }
-        }
-        return perimuimValue;
-    }
+    // public double CalculatePremium(double marketValue, int policyId)
+    // {
+    //     
+    //
+    // }
 
     public bool Save()
     {
