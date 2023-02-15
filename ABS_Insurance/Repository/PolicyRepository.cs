@@ -27,7 +27,7 @@ public class PolicyRepository: IPolicyRepository
     {
         var policy = _context.Policies
             .Include(c => c.ComponentsList)
-            .Where(p => p.PolicyId == policyId).FirstOrDefault();
+            .FirstOrDefault(p => p.PolicyId == policyId);
         return policy;
     }
 
@@ -59,12 +59,6 @@ public class PolicyRepository: IPolicyRepository
         var policy = _context.Policies.Remove(deletePolicy);
         return Save();
     }
-
-    // public double CalculatePremium(double marketValue, int policyId)
-    // {
-    //     
-    //
-    // }
 
     public bool Save()
     {

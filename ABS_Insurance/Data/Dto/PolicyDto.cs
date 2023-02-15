@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using ABS_Insurance.Model;
 
 namespace ABS_Insurance.Data.Dto;
@@ -17,9 +18,11 @@ public class UpdatePolicyDto
 }
 
 
-public class CalPolicyPolicyDto
+public class CalPremiumDto
 {
+    [Required]
     public int PolicyId { get; set; }
+    [Range(0.1, 100)]
     public double MarketValue { get; set; }
     //public ICollection<Components> ComponentsCollection { get; set; }
 }

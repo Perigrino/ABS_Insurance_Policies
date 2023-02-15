@@ -4,8 +4,8 @@ public class ComponentDto
 {
     public int ComponentsId { get; set; }
     public int Sequence { get; set; }
-    public string Name { get; set; }
-    public string Operation { get; set; }
+    public string? Name { get; set; }
+    public string? Operation { get; set; }
     public double FlatValue { get; set; }
     public int PercentageValue { get; set; }
 }
@@ -13,10 +13,20 @@ public class ComponentDto
 
 public class CreateComponentDto
 {
+    public int Sequence { get; set; }
+    public string? Name { get; set; }
+    public string? Operation { get; set; }
+    public double FlatValue { get; set; }
+    public int PercentageValue { get; set; }
+    public int Pol_Id { get; set; }
+}
+
+public class UpdateComponentDto
+{
     public int ComponentsId { get; set; }
     public int Sequence { get; set; }
-    public string Name { get; set; }
-    public string Operation { get; set; }
+    public string? Name { get; set; }
+    public string? Operation { get; set; }
     public double FlatValue { get; set; }
     public int PercentageValue { get; set; }
     public int Pol_Id { get; set; }

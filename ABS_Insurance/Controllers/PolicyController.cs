@@ -1,6 +1,7 @@
 using ABS_Insurance.Data.Dto;
 using ABS_Insurance.Interface;
 using ABS_Insurance.Model;
+using ABS_Insurance.Service;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -12,14 +13,14 @@ namespace ABS_Insurance.Controllers
     public class PolicyController : ControllerBase
     {
         private readonly IPolicyRepository _policyRepository;
-        private readonly IPremiumService _premiumService;
+        private readonly ICalculatePremuimService _calculatePremiumService;
         private readonly IMapper _mapper;
 
-        public PolicyController(IPolicyRepository policyRepository, IPremiumService premiumService, IMapper mapper)
+        public PolicyController(IPolicyRepository policyRepository, ICalculatePremuimService calculatePremiumService, IMapper mapper)
         {
             _policyRepository = policyRepository;
             _mapper = mapper;
-            _premiumService = premiumService;
+            _calculatePremiumService = calculatePremiumService;
         }
         // GET: api/Policy
         [HttpGet]
@@ -52,8 +53,7 @@ namespace ABS_Insurance.Controllers
                 return BadRequest(ModelState);
             
             var policy = _policyRepository.GetPolicies()
-                .Where(pn => pn.PolicyName.ToUpper().Trim() == createPolicy.PolicyName.ToUpper().Trim())
-                .FirstOrDefault();
+                .FirstOrDefault(pn => pn.PolicyName != null && pn.PolicyName.ToUpper().Trim() == createPolicy.PolicyName.ToUpper().Trim());
 
             if (policy != null)
             {
@@ -75,13 +75,7 @@ namespace ABS_Insurance.Controllers
         }
         
         
-        [HttpPost("premuim")]
-        public IActionResult CalCulatePremuim ([FromBody] CalPolicyPolicyDto calPolicy)
-        {
-            double perimuim = _premiumService.CalculatePremium(calPolicy.MarketValue, calPolicy.PolicyId);
 
-            return Ok(perimuim);
-        }
 
         // PUT: api/Policy/5
         [HttpPut("{policyId}")]

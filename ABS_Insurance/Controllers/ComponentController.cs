@@ -15,13 +15,11 @@ namespace ABS_Insurance.Controllers
     public class ComponentController : ControllerBase
     {
         private readonly IComponentRepository _componentRepository;
-        private readonly IPolicyRepository _policyRepository;
         private readonly IMapper _mapper;
 
-        public ComponentController(IComponentRepository componentRepository, IMapper mapper, IPolicyRepository policyRepository)
+        public ComponentController(IComponentRepository componentRepository, IMapper mapper)
         {
             _componentRepository = componentRepository;
-            _policyRepository = policyRepository;
             _mapper = mapper;
         }
 
@@ -58,8 +56,7 @@ namespace ABS_Insurance.Controllers
                 return BadRequest(ModelState);
             
             var component = _componentRepository.GetComponents()
-                .Where(c => c.ComponentsId == createComponents.ComponentsId)
-                .FirstOrDefault();
+                .FirstOrDefault(c => c.Name?.Trim().ToUpper() == createComponents.Name.Trim().ToUpper());
 
             if (component != null)
             {
@@ -82,7 +79,7 @@ namespace ABS_Insurance.Controllers
 
         // // PUT: api/Component/5
         [HttpPut("{componentId}")]
-        public IActionResult PutComponent(int componentId, [FromBody] CreateComponentDto updateComponent)
+        public IActionResult PutComponent(int componentId, [FromBody] UpdateComponentDto updateComponent)
         {
             if (componentId == null)
                 return BadRequest(ModelState);
