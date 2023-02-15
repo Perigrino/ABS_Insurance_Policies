@@ -11,6 +11,7 @@ public interface IPolicyRepository
     bool UpdatePolicy(Policy policy);
     bool DeletePolicy(Policy policy);
     
+    
     bool Save();
 
 }

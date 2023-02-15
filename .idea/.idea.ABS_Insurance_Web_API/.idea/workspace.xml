@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbbe1041-473b-4ee6-8561-9619c2317e65" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ABS_Insurance/Model/PremiumRes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ABS_Insurance/Service/CalculatePremiumService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ABS_Insurance_Web_API/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ABS_Insurance_Web_API/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ABS_Insurance_Web_API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ABS_Insurance_Web_API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ABS_Insurance/ABS_Insurance.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/ABS_Insurance.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Controllers/ComponentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Controllers/ComponentController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ABS_Insurance/Controllers/PolicyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Controllers/PolicyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Data/Dto/ComponentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Data/Dto/ComponentDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ABS_Insurance/Data/Dto/PolicyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Data/Dto/PolicyDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ABS_Insurance/Interface/IPolicyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Interface/IPolicyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Repository/ComponentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Repository/ComponentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Interface/IPremiumService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Interface/ICalculatePremiumService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Model/Components.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Model/Components.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Model/Policy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Model/Policy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ABS_Insurance/Repository/PolicyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ABS_Insurance/Repository/PolicyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABS_Insurance/Service/PremuimService.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +48,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6f2c3a317ee06bc1b0766b94d4e6a045ea25c9a3da49cb9075bcee751250d4/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7733bdb26b2be012c4266979a95d3728e74790201f91a02df4529ee6c2f37/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
@@ -103,7 +113,7 @@
       <workItem from="1675416827725" duration="37563000" />
       <workItem from="1675565234459" duration="8226000" />
       <workItem from="1675782385120" duration="9765000" />
-      <workItem from="1675983988307" duration="12235000" />
+      <workItem from="1675983988307" duration="32989000" />
     </task>
     <task id="LOCAL-00001" summary="001">
       <created>1675430339044</created>
@@ -168,7 +178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675822210247</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added an enpoint to Calculate Premium">
+      <created>1676239876124</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676239876124</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Moved CalculatePremuim logic from IPolicyRepository to PremuimService">
+      <created>1676241196612</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676241196612</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +221,8 @@
     <MESSAGE value="Fix bug fixes" />
     <MESSAGE value="Added DELETE,UPDATE,POST,GET Components" />
     <MESSAGE value="Code clean up + New DB migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code clean up + New DB migrations" />
+    <MESSAGE value="Added an enpoint to Calculate Premium" />
+    <MESSAGE value="Moved CalculatePremuim logic from IPolicyRepository to PremuimService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved CalculatePremuim logic from IPolicyRepository to PremuimService" />
   </component>
 </project>
